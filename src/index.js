@@ -11,7 +11,7 @@
 export default {
   async fetch(request, env, ctx) {
     const data = {
-      request: request
+      inbound: request.cf
     };
 
     return Response.json( data );
