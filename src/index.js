@@ -10,10 +10,10 @@
 
 export default {
 	async fetch(request, env, ctx) {
-		const headers = request.headers;
+		const data = {
+			headers: request.headers,
+		};
 
-		return new Response.json(headers);
-
-		// return new Response('Hello World!');
+		return Response.json( data );
 	},
 };
