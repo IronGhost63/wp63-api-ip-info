@@ -10,9 +10,18 @@
 
 export default {
   async fetch(request, env, ctx) {
+    const inbound = request.cf;
+
     const data = {
-      inbound: request.cf,
-      ip: request.headers.get('cf-connecting-ip')
+      ipAddress: request.headers.get('cf-connecting-ip'),
+      continent: inbound.continent,
+      country: inbound.country,
+      region: inbound.region,
+      city: inbound.city,
+      isp: {
+        id: inbound.asn,
+        name: inbound.asOrganization,
+      }
     };
 
     return Response.json( data );
