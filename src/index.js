@@ -12,7 +12,7 @@ export default {
   async fetch(request, env, ctx) {
     const data = {
       inbound: request.cf,
-      ip: request.headers.get('x-forwarded-for')
+      ip: request.headers.get('cf-connecting-ip')
     };
 
     return Response.json( data );
