@@ -9,11 +9,11 @@
  */
 
 export default {
-	async fetch(request, env, ctx) {
-		const data = {
-			headers: request.headers,
-		};
+  async fetch(request, env, ctx) {
+    const data = {
+      request: request
+    };
 
-		return Response.json( data );
-	},
+    return Response.json( data );
+  },
 };
