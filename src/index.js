@@ -12,7 +12,7 @@ export default {
 	async fetch(request, env, ctx) {
 		const headers = request.headers;
 
-		return new Response( headers );
+		return new Response.json(headers);
 
 		// return new Response('Hello World!');
 	},
